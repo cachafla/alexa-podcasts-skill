@@ -1,0 +1,13 @@
+service: podcasts
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  profile: serverless
+  region: us-west-2
+
+functions:
+  podcast:
+    handler: index.handler
+    events:
+      - alexaSkill

@@ -1,0 +1,134 @@
+{
+    "languageModel": {
+        "types": [
+            {
+                "name": "PodcastName",
+                "values": [
+                    {
+                        "id": null,
+                        "name": {
+                            "value": "dynamic banter",
+                            "synonyms": []
+                        }
+                    }
+                ]
+            }
+        ],
+        "intents": [
+            {
+                "name": "AMAZON.CancelIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.PauseIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.ResumeIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.StopIntent",
+                "samples": []
+            },
+            {
+                "name": "LatestPodcast",
+                "samples": [
+                    "what's the latest episode from {PodcastName}",
+                    "tell me about the latest episode from {PodcastName}",
+                    "give me the latest episode from {PodcastName}"
+                ],
+                "slots": [
+                    {
+                        "name": "PodcastName",
+                        "type": "PodcastName"
+                    }
+                ]
+            },
+            {
+                "name": "PlayLatestPodcast",
+                "samples": [
+                    "play the latest episode of {PodcastName}",
+                    "play {PodcastName}"
+                ],
+                "slots": [
+                    {
+                        "name": "PodcastName",
+                        "type": "PodcastName"
+                    }
+                ]
+            }
+        ],
+        "invocationName": "podcasts"
+    },
+    "prompts": [
+        {
+            "id": "Elicit.Intent-LatestPodcast.IntentSlot-PodcastName",
+            "variations": [
+                {
+                    "type": "PlainText",
+                    "value": "what's the name of the podcast"
+                },
+                {
+                    "type": "PlainText",
+                    "value": "tell me the name of your podcast"
+                }
+            ]
+        },
+        {
+            "id": "Elicit.Intent-PlayLatestPodcast.IntentSlot-PodcastName",
+            "variations": [
+                {
+                    "type": "PlainText",
+                    "value": "what is the name of the podcast"
+                },
+                {
+                    "type": "PlainText",
+                    "value": "what podcast do you want to listen"
+                }
+            ]
+        }
+    ],
+    "dialog": {
+        "intents": [
+            {
+                "name": "LatestPodcast",
+                "confirmationRequired": false,
+                "prompts": {},
+                "slots": [
+                    {
+                        "name": "PodcastName",
+                        "type": "PodcastName",
+                        "elicitationRequired": true,
+                        "confirmationRequired": false,
+                        "prompts": {
+                            "elicitation":
+                                "Elicit.Intent-LatestPodcast.IntentSlot-PodcastName"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "PlayLatestPodcast",
+                "confirmationRequired": false,
+                "prompts": {},
+                "slots": [
+                    {
+                        "name": "PodcastName",
+                        "type": "PodcastName",
+                        "elicitationRequired": true,
+                        "confirmationRequired": false,
+                        "prompts": {
+                            "elicitation":
+                                "Elicit.Intent-PlayLatestPodcast.IntentSlot-PodcastName"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

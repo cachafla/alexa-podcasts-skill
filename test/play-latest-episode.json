@@ -1,0 +1,45 @@
+{
+    "session": {
+        "new": true,
+        "sessionId": "SessionId.6d27afec-918d-4240-874d-ec16ed62cc0c",
+        "application": {
+            "applicationId": "amzn1.ask.skill.123"
+        },
+        "attributes": {},
+        "user": {
+            "userId": "amzn1.ask.account.userId"
+        }
+    },
+    "request": {
+        "type": "IntentRequest",
+        "requestId": "EdwRequestId.5ab27361-2596-470d-a5f5-3877f9aed3a4",
+        "intent": {
+            "name": "PlayLatestPodcast",
+            "slots": {
+                "PodcastName": {
+                    "name": "PodcastName",
+                    "value": "dynamic banter"
+                }
+            }
+        },
+        "locale": "en-US",
+        "timestamp": "2017-11-11T01:44:57Z"
+    },
+    "context": {
+        "AudioPlayer": {
+            "playerActivity": "IDLE"
+        },
+        "System": {
+            "application": {
+                "applicationId": "amzn1.ask.skill.123"
+            },
+            "user": {
+                "userId": "amzn1.ask.account.userId"
+            },
+            "device": {
+                "supportedInterfaces": {}
+            }
+        }
+    },
+    "version": "1.0"
+}
